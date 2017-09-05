@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="CI Outage" max_length="40" name="x_38159_recoutages_cmdb_ci_recoutage" type="collection">
+        <element label="Begin" max_length="40" name="u_begin" type="glide_date_time"/>
+        <element label="CI" max_length="32" name="u_cmdb_ci" reference="cmdb_ci" type="reference"/>
+        <element label="Duration" max_length="40" name="u_duration" type="glide_duration"/>
+        <element label="End" max_length="40" name="u_end" type="glide_date_time"/>
+        <element label="Is Recurring" max_length="40" name="u_is_recurring" type="boolean"/>
+        <element label="Message" max_length="40" name="u_message" type="string"/>
+        <element label="Outage Frequency" max_length="40" name="u_outage_frequency" type="string"/>
+        <element label="Short Description" max_length="100" name="u_short_description" type="string"/>
+        <element choice="1" default="outage" label="Type" max_length="40" name="u_type" type="string">
+            <choice>
+                <element label="Degradation" value="degradation"/>
+                <element label="Outage" value="outage"/>
+                <element label="Planned Outage" value="planned"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="u_cmdb_ci"/>
+        </index>
+    </element>
+</database>
